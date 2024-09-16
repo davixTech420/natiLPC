@@ -8,11 +8,11 @@ import { useGlobalContext } from "../../context/GlobalProvider";
 const theaterData = [
   {
     id: 1,
-    name: "Teatro Nacional",
-    image: "https://via.placeholder.com/100",
+    name: "Teatro Colon",
+    image: "https://images.adsttc.com/media/images/5899/d0b6/e58e/cead/d600/0167/slideshow/CC0_Public_Domain_opera-594592.jpg?1486475429",
     location: "Calle Principal 123, Ciudad",
     nextShow: "Romeo y Julieta",
-    date: "2023-07-15",
+    date: "2023-07-1x5",
     time: "20:00",
   },
   {
@@ -39,12 +39,14 @@ const Home = () => {
   const [selectedTheater, setSelectedTheater] = useState(null);
   const { user, setUser, setIsLogged } = useGlobalContext();
   const [userStats, setUserStats] = useState({
-    name: "Ana García",
-    avatar: "https://via.placeholder.com/50",
+    name: user.username,
+    avatar: user.avatar,
     obrasVistas: 23,
     proximaFuncion: 2,
     objetivoAnual: 66,
   });
+  console.log(user);
+  
 
   
   const logout = async () => {
