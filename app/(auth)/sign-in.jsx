@@ -18,8 +18,10 @@ const SignIn = () => {
 
   const submit = async () => {
     if (form.email === "" || form.password === "") {
-      Alert.alert("Error", "Please fill in all fields");
-    }
+      Alert.alert("Error", "Complete Los Campos");
+    } else {
+
+    
     setSubmitting(true);
     try {
       await signIn(form.email, form.password);
@@ -27,13 +29,14 @@ const SignIn = () => {
       setUser(result);
       setIsLogged(true);
 
-      Alert.alert("Success", "User signed in successfully");
+      Alert.alert("Exito", "Usuario Logueado Con Exito");
       router.replace("/home");
     } catch (error) {
-      Alert.alert("Error",error.message);
+      Alert.alert("Error","Ha Ocurrido Un Error");
     } finally {
       setSubmitting(false);
     }
+  }
   };
 
   return (

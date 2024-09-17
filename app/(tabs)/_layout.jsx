@@ -8,17 +8,17 @@ import { useGlobalContext } from "../../context/GlobalProvider";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
-    <View className="flex items-center justify-center gap-2 bg-white rounded-lg">
+    <View className="flex items-center justify-center gap-2  rounded-lg">
   
       <Image
         source={icon}
         resizeMode="contain"
-        tintColor="black"
+        tintColor="white"
         className="w-6 h-6"
       />
       <Text
         className={`${focused ? "font-psemibold" : "font-pregular"} text-xs m-2`}
-        style={{ color: "black" }}
+        style={{ color: "white" }}
       >
         {name}
       </Text>
@@ -40,10 +40,12 @@ const TabLayout = () => {
           tabBarInactiveTintColor: "#CDCDE0",
           tabBarShowLabel: false,
           tabBarStyle: {
+            borderTopLeftRadius:30,
+            borderTopRightRadius:30,
             backgroundColor: "#07575B",
             borderTopWidth: 1,
             borderTopColor: "#232533",
-            height: 84,
+            height: 70,
           },
         }}
       >

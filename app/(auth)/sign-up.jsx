@@ -20,9 +20,8 @@ const SignUp = () => {
 
    const submit = async () => {
     if (form.username === "" || form.email === "" || form.password === "") {
-      Alert.alert("Error", "Please fill in all fields");
-    }
-
+      Alert.alert("Error", "Complete Los Campos");
+    } else {
     setSubmitting(true);
     try {
       const result = await createUser(form.email, form.password, form.username);
@@ -30,10 +29,11 @@ const SignUp = () => {
       setIsLogged(true);
       router.replace("/home");
     } catch (error) {
-      Alert.alert("Error Desde El Mensaje De Registrar", error.message);
+      Alert.alert("Error", "Ha Ocurrido Un Error");
     } finally {
       setSubmitting(false);
     }
+  }
   };
  
   return (
